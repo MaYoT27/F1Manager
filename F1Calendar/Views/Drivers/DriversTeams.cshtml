@@ -1,0 +1,30 @@
+﻿@{ ViewData["Title"] = "Drivers and teams"; }
+
+@model IEnumerable<F1Manager.Entities.DriverEntity>
+
+<h2>List of drivers and teams</h2>
+
+<form method="GET" class="form-inline mb-2">
+    <input type="text" name="name" placeholder="Filter by full name" class="form-control" />
+    <button type="submit" class="btn btn-primary ml-2">Search</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Full name</th>
+            <th>Number</th>
+            <th>Team</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>@item.FullName</td>
+    <td>@item.Number</td>
+    <td>@item.Team</td>
+</tr>}
+    </tbody>
+</table>

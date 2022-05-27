@@ -1,0 +1,33 @@
+﻿@{ ViewData["Title"] = "Races"; }
+
+@model IEnumerable<F1Manager.Entities.RaceEntity>
+
+<h2>List of races</h2>
+
+<form method="GET" class="form-inline mb-2">
+    <input type="text" name="name" placeholder="Filter by name" class="form-control" />
+    <button type="submit" class="btn btn-primary ml-2">Search</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Track</th>
+            <th>Date</th>
+            <th>Lap Length (m)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>@item.Name</td>
+    <td>@item.Track</td>
+    <td>@item.Date</td>
+    <td>@item.Length</td>
+</tr>
+}
+    </tbody>
+</table>

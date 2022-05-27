@@ -1,0 +1,7 @@
+﻿@model ErrorViewModelCustom
+
+<h1>@Model.MainMessage</h1>
+@foreach (var item in Model.Errors)
+{
+<div>@item</div>
+}
